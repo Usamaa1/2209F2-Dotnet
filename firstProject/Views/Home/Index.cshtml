@@ -1,8 +1,95 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    TempData.Keep();
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+    <ul>
+    @for(int i=1; i <= 10; i++)
+    {
+            @if (i % 2 == 0)
+            {
+                <li>Item : @i</li>
+
+            }
+            else
+            {
+                <li>Item: ODD</li>
+            }
+        }
+    </ul>
+    
+
+    <h1>Our Employees</h1>
+@*     <ul>
+
+    @foreach(var item in (string[])ViewData["employees"])
+    {
+
+    <li>@item</li>
+
+    }
+    </ul>
+    
+ *@
+
+
+
+
+@* <ul>
+
+    @foreach (var item in ViewBag.prj)
+    {
+
+        <li>@item</li>
+
+    }
+</ul>
+ *@
+
+
+
+<h1>Our Projects</h1>
+<ul>
+
+
+</ul>
+
+
+@ViewData["data"]
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Age</th>
+            <th scope="col">Height</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in ViewBag.persons)
+        {
+            <tr>
+                <td>@item.firstName</td>
+                <td>@item.lastName</td>
+                <td>@item.age</td>
+                <td>@item.height</td>
+            </tr>
+        }
+  
+
+    </tbody>
+</table>
+
+
+
+

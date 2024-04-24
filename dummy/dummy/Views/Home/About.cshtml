@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "About Page";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+
+<ol>
+
+    @if (TempData["projects"] != null)
+    {
+        @foreach (var item in (string[])TempData["projects"])
+        {
+            <li>@item</li>
+        }
+    }
+    else
+    {
+        <p>Data not Found!</p>
+    }
+
+</ol>
+
+
+
+
+
+
